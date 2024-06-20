@@ -5,17 +5,24 @@
  */
 package view;
 
+import Controller.LoginController;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author pedro
  */
 public class Login extends javax.swing.JFrame {
+    private final LoginController controller;
 
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
+        controller = new LoginController(this);
     }
 
     /**
@@ -54,6 +61,11 @@ public class Login extends javax.swing.JFrame {
         jButtonEntrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonEntrar.setForeground(new java.awt.Color(255, 102, 102));
         jButtonEntrar.setText("Entrar");
+        jButtonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEntrarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, -1, -1));
         getContentPane().add(textSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 210, 60));
 
@@ -92,6 +104,11 @@ public class Login extends javax.swing.JFrame {
     private void textUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textUsuarioActionPerformed
+
+    private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
+        // Execulta quando clico no botão
+        this.controller.fizTarefa();      
+    }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,4 +156,26 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField textSenha;
     private javax.swing.JTextField textUsuario;
     // End of variables declaration//GEN-END:variables
+
+    public void exibeMensagem(String mensagem) {
+        JOptionPane.showMessageDialog(null, mensagem);
+    }
+
+    public JPasswordField getTextSenha() {
+        return textSenha;
+    }
+
+    public void setTextSenha(JPasswordField textSenha) {
+        this.textSenha = textSenha;
+    }
+
+    public JTextField getTextUsuario() {
+        return textUsuario;
+    }
+
+    public void setTextUsuario(JTextField textUsuario) {
+        this.textUsuario = textUsuario;
+    }
+    
+    
 }

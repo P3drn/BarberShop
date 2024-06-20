@@ -52,15 +52,20 @@ public class Agenda extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setForeground(new java.awt.Color(255, 51, 51));
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 460, 120, 50));
 
-        jButton1.setBackground(new java.awt.Color(0, 204, 102));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(51, 204, 0));
         jButton1.setText("Agendar");
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 460, 120, 50));
 
@@ -69,21 +74,21 @@ public class Agenda extends javax.swing.JFrame {
         jLabel8.setText("Agenda atual");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 610, -1, -1));
 
-        jTable1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jTable1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, "Pedro", "Cabelo", "25,00", null, null},
-                {null, "Alan", "Barba", "15,00", null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {"1", "Alan", "Corte", "10.00", "22/04/2024", "08:00", null},
+                {"2", "Abigail", "Barb", "20.00", "22/04/2024", "09:00", null},
+                {"3", "Pedro", "Barba", "20.00", "23/04/2024", "08:00", "Pode se atrasar"},
+                {"4", "Felipe", "Barba + Corte", "30,00", "23/04/2024", "09:00", null}
             },
             new String [] {
-                "Id", "Cliente", "Serviço", "Valor", "Data", "Hora"
+                "Id", "Cliente", "Serviço", "Valor", "Data", "Hora", "Observação"
             }
         ));
         jScrollPane2.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 490, 310));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 650, 550, 310));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,6 +106,11 @@ public class Agenda extends javax.swing.JFrame {
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Barba", "Cabelo", "Luzes", " " }));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 250, 50));
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -143,6 +153,14 @@ public class Agenda extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
